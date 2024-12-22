@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="com.studentmanager.controller.MainController" 
+      spacing="20" styleClass="main-container" prefHeight="700">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <VBox styleClass="header-container">
+        <Label text="Student Management System" styleClass="title-label"/>
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Total Students:" styleClass="stats-label"/>
+            <Label fx:id="totalStudentsLabel" text="0" styleClass="stats-value"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label text="Class Average:" styleClass="stats-label"/>
+            <Label fx:id="averageGradeLabel" text="0.00" styleClass="stats-value"/>
+        </HBox>
+    </VBox>
+    
+    <TableView fx:id="studentTable" VBox.vgrow="ALWAYS" styleClass="fade-in" minHeight="400">
+        <placeholder>
+            <Label text="No students added yet" style="-fx-text-fill: white;"/>
+        </placeholder>
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50" />
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="150" />
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="200" />
+            <TableColumn fx:id="courseColumn" text="Course" prefWidth="150" />
+            <TableColumn fx:id="gradeColumn" text="Grade" prefWidth="80" />
+            <TableColumn fx:id="letterGradeColumn" text="Letter Grade" prefWidth="100" />
+            <TableColumn fx:id="gradeStatusColumn" text="Status" prefWidth="80" />
+            <TableColumn fx:id="statusColumn" text="Enrollment" prefWidth="100" />
+        </columns>
+    </TableView>
+    
+    <HBox spacing="15" styleClass="input-container,slide-in" minHeight="80">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+        <VBox.margin>
+            <Insets top="20"/>
+        </VBox.margin>
+        <TextField fx:id="nameField" promptText="Enter Student Name" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="emailField" promptText="Enter Email Address" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="courseField" promptText="Enter Course Name" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="gradeField" promptText="Enter Grade (0-100)" HBox.hgrow="ALWAYS"/>
+        <Button text="Add Student" onAction="#handleAddStudent" styleClass="add-button"/>
+    </HBox>
+</VBox> 

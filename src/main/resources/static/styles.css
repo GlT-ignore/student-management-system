@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0a0a1a;
+    min-height: 100vh;
+    display: flex;
+    padding: 2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(30, 41, 59, 0.8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Card */
+.header-card {
+    text-align: center;
+}
+
+.header-card h1 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo i {
+    color: #00ffff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.stat-box {
+    background: rgba(20, 30, 50, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+.stat-box i {
+    color: #ff00ff;
+    font-size: 1.2rem;
+}
+
+.stat-box span {
+    color: #90a0b7;
+    font-size: 0.9rem;
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.stat-box h2 {
+    color: #00ffff;
+    font-size: 1.5rem;
+}
+
+/* Table Card */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+th {
+    background: rgba(20, 30, 50, 0.8);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: #00ffff;
+}
+
+th i {
+    color: #ff00ff;
+    margin-right: 0.5rem;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+/* Input Card */
+.input-card form {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-group {
+    position: relative;
+    flex: 1;
+}
+
+.input-group i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ffff;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    background: rgba(20, 30, 50, 0.8);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 6px;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.1);
+}
+
+button {
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Status Colors */
+.status-pass {
+    color: #00ff00;
+}
+
+.status-fail {
+    color: #ff0000;
+}
+
+.connection-status {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(20, 30, 50, 0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.status-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffeb3b;
+    transition: background-color 0.3s ease;
+}
+
+.status-icon.connected {
+    background: #00ff9d;
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+.status-icon.disconnected {
+    background: #ff4d4d;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+}
+
+.status-icon.checking {
+    background: #ffff00;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
